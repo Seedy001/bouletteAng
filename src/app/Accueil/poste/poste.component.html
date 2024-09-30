@@ -1,1 +1,30 @@
-<p>poste works!</p>
+<h1 class="titre"> SITES HISTORIQUE A VISITEE AU SENEGAL </h1>
+<div class="container_post">
+  <div class="card flex justify-content-center" *ngFor="let poste of postes">
+    <p-card [header]="poste.title" [subheader]="poste.sous_title" [style]="{ width: '360px' }">
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="poste.imageUrl">
+      </ng-template>
+      <p>{{ poste.description }}</p>
+      <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+          <p-button label="Voir plus"  (click)="showDialog(poste)"  class="w-full"></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<p-dialog  [(visible)]="displayDialog" modal="modal" [header]="selectedPoste?.title" [style]="{ width: '1000px', maxWidth: '1200px' }" [class]="'custom-dialog'">
+  <ng-template pTemplate="body">
+    <div class="image-container">
+      <img [src]="selectedPoste?.imageUrl" alt="{{ selectedPoste?.title }}" class="popup-image">
+    </div>
+    <p>{{ selectedPoste?.description_popup }}</p>
+    <a [href]="selectedPoste?.lien" target="_blank">Plus de détails sur la ville de Touba </a>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button label="Fermer" (click)="hideDialog()" class="w-full"></p-button>
+  </ng-template>
+</p-dialog>
+

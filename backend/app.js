@@ -3,6 +3,7 @@ const app = express()
 const port = 3000;
 const mongoose = require('mongoose');
 const imageroute = require("./routes/image-route");
+const posteroute = require("./routes/poste-route");
 // // const authRoutes = require("./routes/auth-user-route")
 // const swaggerJsdoc = require('swagger-jsdoc');
 // const swaggerUi = require('swagger-ui-express');
@@ -38,7 +39,7 @@ const imageroute = require("./routes/image-route");
 //     ],
 //   },
 //   apis: ['./routes/user-route.js','./routes/auth-user-route.js'], // Chemin vers vos fichiers de définition des routes
-  
+
 // };
 
 
@@ -68,7 +69,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(imageroute);
-// app.use(authRoutes);
+ app.use(posteroute);
 
 // async function connectDB(){
 //    await mongoose.connect('mongodb://localhost:27017',{

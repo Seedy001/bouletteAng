@@ -1,0 +1,36 @@
+.titre{
+  text-align: center;
+}
+.card {
+  margin-top: 20px; /* Ajuste la valeur selon tes besoins */
+
+}
+a{
+  text-decoration: none;
+
+}
+.container_post {
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+
+  gap: 20px; /* Espace entre les cartes */
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Centre l'image horizontalement */
+  margin-bottom: 1rem; /* Ajoute un espace en bas si nécessaire */
+}
+
+.popup-image {
+  max-width: 80%; /* Limite la largeur de l'image */
+  height: 50%; /* Ajuste la hauteur proportionnellement */
+}
+.custom-dialog {
+  max-width: 400px; /* Limite la largeur maximale du dialogue */
+}
+
+@media (max-width: 600px) {
+  .custom-dialog {
+    width: 90%; /* Largeur à 90% sur les petits écrans */
+  }
+}
